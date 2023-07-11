@@ -51,4 +51,5 @@
         select distinct(permission_code)
         from sys_permission;
     </select>
+
 </mapper>
