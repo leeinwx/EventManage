@@ -3,13 +3,21 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.eventmanage.dao.LoginDao">
 
-    <select id="checkUser" resultType="com.alibaba.fastjson.JSONObject">
-        SELECT u.id userId
-        FROM sys_user u
-        WHERE u.username = #{username}
-          AND u.password = #{password}
-          AND u.delete_status = '1'
+    <select id="checkUser" resultType="Integer">
+        SELECT
+            id
+        FROM
+            sys_user
+        WHERE
+            1 = 1
+          AND username = #{username}
+          AND password = #{password}
+          AND STATUS = 0
     </select>
+
+    <insert id="addUser">
+        INSERT INTO sys_user(username, password) VALUES(#{username}, #{password})
+    </insert>
 
     <resultMap id="userInfo" type="com.cs.eventmanage.dto.session.SessionUserInfo">
         <id column="userId" property="userId"/>

@@ -7,4 +7,6 @@ public interface LoginService {
 
     JSONObject authLogin(JSONObject jsonObject);
 
+    void addUser(JSONObject jsonObject);
+
 }

@@ -27,12 +27,19 @@ public class LoginServiceImpl implements LoginService {
         String username = jsonObject.getString("username");
         String password = jsonObject.getString("password");
         JSONObject info = new JSONObject();
-        JSONObject user = loginDao.checkUser(username, password);
+        Integer user = loginDao.checkUser(username, password);
         if (user == null) {
             throw new CommonJsonException(ErrorEnum.E_10010);
         }
         String token = tokenService.generateToken(username);
         info.put("token", token);
         return CommonUtil.successJson(info);
+    }
+
+    @Override
+    public void addUser(JSONObject jsonObject) {
+        String username = jsonObject.getString("username");
+        String password = jsonObject.getString("password");
+        loginDao.addUser(username, password);
     }
 }
