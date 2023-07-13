@@ -21,7 +21,6 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     private TokenService tokenService;
 
-
     @Override
     public JSONObject authLogin(JSONObject jsonObject) {
         String username = jsonObject.getString("username");

@@ -19,10 +19,4 @@ public interface LoginDao {
     //get all available users except admin account
     List<String> getAvailableUsers();
 
-    SessionUserInfo getUserInfo(String username);
-
-    Set<String> getAllMenu();
-
-    Set<String> getAllPermissionCode();
-
 }
