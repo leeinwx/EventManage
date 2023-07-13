@@ -9,4 +9,6 @@ public interface LoginService {
 
     void addUser(JSONObject jsonObject);
 
+    JSONObject logout();
+
 }

@@ -42,4 +42,10 @@ public class LoginServiceImpl implements LoginService {
         String password = jsonObject.getString("password");
         loginDao.addUser(username, password);
     }
+
+    @Override
+    public JSONObject logout() {
+        tokenService.invalidateToken();
+        return CommonUtil.successJson();
+    }
 }

@@ -27,6 +27,11 @@ public class LoginController {
         return loginService.authLogin(requestJson);
     }
 
+    @PostMapping("/logout")
+    public JSONObject logout() {
+        return loginService.logout();
+    }
+
     /**
      * add user
      * @param requestJson username and password
