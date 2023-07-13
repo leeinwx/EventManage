@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.eventmanage.dao.MenuDao">
+
+    <select id="getMenuList" resultType="">
+        SELECT
+            menu_code,
+            menu_name
+        FROM
+            menu_info
+        WHERE
+            1 = 1
+          AND STATUS = 0
+    </select>
+
+    <insert id="addMenuPermission">
+        INSERT INTO sys_menu_permission(menu_code, user_id) VALUES (#{menuCode}, #{userId})
+    </insert>
+
+</mapper>

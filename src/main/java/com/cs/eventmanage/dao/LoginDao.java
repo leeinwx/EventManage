@@ -1,6 +1,5 @@
 package com.cs.eventmanage.dao;
 
-import com.alibaba.fastjson.JSONObject;
 import com.cs.eventmanage.dto.session.SessionUserInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

@@ -1,3 +1,23 @@
+1.用户表添加：只能通过root账户添加
+2.用户菜单权限添加：只能通过root账户添加
+  获取所有用户
+  获取所有菜单
+3.事件大类编辑：
+  事件大类获取
+  事件大类添加
+  事件大类更新（名称、状态）
+4.事件小类编辑：
+  事件小类获取（大类下）
+  事件小类添加
+  事件小类更新（大类id、名称、状态）
+  地理位置获取（两层）
+5.事件细节编辑
+  事件细节添加（小类下）
+  事件细节编辑（内容、参与用户）
+6.事件用户行为编辑
+  用户行为添加（事件下）
+  用户行为编辑
+
 底层表：
 1.用户表：sys_user
 CREATE TABLE `eventmanage`.`sys_user`  (
@@ -33,7 +53,6 @@ CREATE TABLE `eventmanage`.`sys_menu_permission`  (
   `status` int NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_bin ROW_FORMAT = Dynamic;
-
 
 
 4.事件分类表（事件大类）：event_first_class
@@ -73,6 +92,7 @@ CREATE TABLE `eventmanage`.`event_properties`  (
   `status` int NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_bin ROW_FORMAT = Dynamic;
+
 
 7.地理位置信息：province_city
 CREATE TABLE `eventmanage`.`province_city`  (
