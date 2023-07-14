@@ -3,20 +3,20 @@
   获取所有用户 /permission/getMenuList
   获取所有菜单 /permission/getUserList
 3.事件大类编辑：
-  事件大类获取
-  事件大类添加
-  事件大类更新（名称、状态）
+  事件大类获取 /class/getEventClass
+  事件大类添加 /class/addClass
+  事件大类更新（名称、状态） /class/updateClass
 4.事件小类编辑：
-  事件小类获取（大类下）
-  事件小类添加
-  事件小类更新（大类id、名称、状态）
-  地理位置获取（两层）
+  事件小类获取（大类下） /subClass/getClass
+  事件小类添加 /subClass/addClass
+  事件小类更新（大类id、名称、状态） /subClass/updateClass
+  地理位置获取（两层） /subClass/getCityList
 5.事件细节编辑
-  事件细节添加（小类下）
-  事件细节编辑（内容、参与用户）
+  事件细节添加（小类下） /subClassDetail/addInfo
+  事件细节编辑（内容、参与用户） /subClassDetail/editInfo
 6.事件用户行为编辑
-  用户行为添加（事件下）
-  用户行为编辑
+  用户行为添加（事件下） /eventUser/add
+  用户行为编辑 /eventUser/edit
 7.用户操作行为
     登陆 /login/auth
     登出 /login/logout
