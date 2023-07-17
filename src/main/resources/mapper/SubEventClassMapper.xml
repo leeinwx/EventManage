@@ -25,4 +25,12 @@
         INSERT INTO event_sub_class(class_id, subclass_id, subclass_name) VALUES (#{classId}, #{subClassId}, #{subClassName})
     </insert>
 
+    <update id="updateEventSubClass">
+        UPDATE event_sub_class
+        SET class_id = #{classId},
+            subclass_name = #{subClassName},
+            status = #{status}
+        WHERE 1 = 1 AND subclass_id = #{subClassId}
+    </update>
+
 </mapper>

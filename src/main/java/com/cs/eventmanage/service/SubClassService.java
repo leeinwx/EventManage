@@ -12,6 +12,8 @@ public interface SubClassService {
 
     void addEventSubClass(JSONObject requestJson);
 
+    void updateEventSubClass(JSONObject requestJson);
+
     List<ProvinceCityInfo> getCityList();
 
 }

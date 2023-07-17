@@ -13,4 +13,6 @@ public interface SubEventDao {
 
     void addEventSubClass(@Param("classId") String classId, @Param("subClassId") String subClassId, @Param("subClassName") String subClassName);
 
+    void updateEventSubClass(@Param("classId") String classId, @Param("subClassId") String subClassId, @Param("subClassName") String subClassName, @Param("status") Integer status);
+
 }

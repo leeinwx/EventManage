@@ -27,8 +27,8 @@ public class SubClassController {
     }
 
     @PostMapping("/updateClass")
-    void updateEventSubClass() {
-
+    void updateEventSubClass(@RequestBody JSONObject requestJson) {
+        subClassService.updateEventSubClass(requestJson);
     }
 
     /**

@@ -31,9 +31,19 @@ public class SubClassServiceImpl implements SubClassService {
     @Override
     public void addEventSubClass(JSONObject requestJson) {
         String classId = requestJson.getString("classId");
-        String subClassId = requestJson.getString("subClassId");
+        //todo
+        String subClassId = "2222";
         String subClassName = requestJson.getString("subClassName");
         subEventDao.addEventSubClass(classId, subClassId, subClassName);
+    }
+
+    @Override
+    public void updateEventSubClass(JSONObject requestJson) {
+        String classId = requestJson.getString("classId");
+        String subClassId = requestJson.getString("subClassId");
+        String subClassName = requestJson.getString("subClassName");
+        Integer status = requestJson.getInteger("status");
+        subEventDao.updateEventSubClass(classId, subClassId, subClassName, status);
     }
 
     @Override
