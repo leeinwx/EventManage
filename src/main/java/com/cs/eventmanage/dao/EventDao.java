@@ -13,4 +13,6 @@ public interface EventDao {
 
     void addClass(@Param("classId") String classId, @Param("className") String className, @Param("eventType") String eventType);
 
+    void updateClass(@Param("classId") String classId, @Param("className") String className, @Param("eventType") String eventType, @Param("status") Integer status);
+
 }

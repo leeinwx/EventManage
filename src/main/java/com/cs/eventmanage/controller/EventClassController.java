@@ -15,19 +15,31 @@ public class EventClassController {
     @Autowired
     private EventClassService eventClassService;
 
+    /**
+     * get first class info
+     * @return
+     */
     @GetMapping("/getClass")
     List<BigClassInfo> getEventClass() {
         return eventClassService.getEventClass();
     }
 
+    /**
+     * add first class info
+     * @param requestJson
+     */
     @PostMapping("/addClass")
     void addEventClass(@RequestBody JSONObject requestJson) {
         eventClassService.addClass(requestJson);
     }
 
+    /**
+     * update first class detail
+     * @param requestJson
+     */
     @PostMapping("/updateClass")
-    void updateEventClass() {
-
+    void updateEventClass(@RequestBody JSONObject requestJson) {
+        eventClassService.updateClass(requestJson);
     }
 
 }

@@ -11,4 +11,6 @@ public interface EventClassService {
 
     void addClass(JSONObject requestJson);
 
+    void updateClass(JSONObject requestJson);
+
 }

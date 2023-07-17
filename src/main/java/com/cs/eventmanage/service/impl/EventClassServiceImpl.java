@@ -30,4 +30,13 @@ public class EventClassServiceImpl implements EventClassService {
         String uuid = "1111";
         eventDao.addClass(uuid, className, eventType);
     }
+
+    @Override
+    public void updateClass(JSONObject requestJson) {
+        String classId = requestJson.getString("classId");
+        String className = requestJson.getString("className");
+        String eventType = requestJson.getString("eventType");
+        Integer status = requestJson.getInteger("status");
+        eventDao.updateClass(classId, className, eventType, status);
+    }
 }

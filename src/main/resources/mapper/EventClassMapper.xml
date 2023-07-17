@@ -25,5 +25,13 @@
         INSERT INTO event_first_class(class_id, class_name, event_type) VALUES (#{classId}, #{className}, #{eventType})
     </insert>
 
+    <update id="updateClass">
+        UPDATE event_first_class
+        SET class_name = #{className},
+            event_type = #{eventType},
+            status = #{status}
+        WHERE 1 = 1 AND class_id = #{classId}
+    </update>
+
 
 </mapper>
