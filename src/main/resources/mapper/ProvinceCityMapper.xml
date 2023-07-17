@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.eventmanage.dao.ProvinceCityDao">
+
+    <resultMap id="CityInfo" type="com.cs.eventmanage.dto.session.ProvinceCityInfo">
+        <result column="province" property="province" jdbcType="VARCHAR"/>
+        <result column="city_name" property="city" jdbcType="VARCHAR"/>
+        <result column="city_id" property="cityId" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getCityList" resultMap="CityInfo">
+        SELECT
+            province,
+            city_name,
+            city_id
+        FROM
+            province_city
+    </select>
+
+</mapper>

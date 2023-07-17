@@ -3,3 +3,5 @@ spring:
     active: local
 mybatis:
   mapperLocations: classpath:/mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

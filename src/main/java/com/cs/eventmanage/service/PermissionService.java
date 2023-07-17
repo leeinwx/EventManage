@@ -1,5 +1,6 @@
 package com.cs.eventmanage.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.cs.eventmanage.dto.session.MenuInfo;
 import com.cs.eventmanage.dto.session.UserInfo;
 
@@ -10,5 +11,7 @@ public interface PermissionService {
     List<MenuInfo> getMenuList();
 
     List<UserInfo> getUserList();
+
+    void addUserPermission(JSONObject requestJson);
 
 }

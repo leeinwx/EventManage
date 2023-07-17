@@ -1,5 +1,8 @@
 package com.cs.eventmanage.controller;
 
+import com.cs.eventmanage.dto.session.ProvinceCityInfo;
+import com.cs.eventmanage.service.SubClassService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +13,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/subClass")
 public class SubClassController {
+
+    @Autowired
+    private SubClassService subClassService;
 
     @GetMapping("/getClass")
     List<Object> getEventSubClass() {
@@ -27,8 +33,8 @@ public class SubClassController {
     }
 
     @PostMapping("/getCityList")
-    List<Object> getCityList() {
-        return null;
+    List<ProvinceCityInfo> getCityList() {
+        return subClassService.getCityList();
     }
 
 }

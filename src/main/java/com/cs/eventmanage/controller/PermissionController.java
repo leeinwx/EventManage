@@ -1,12 +1,11 @@
 package com.cs.eventmanage.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.cs.eventmanage.dto.session.MenuInfo;
 import com.cs.eventmanage.dto.session.UserInfo;
 import com.cs.eventmanage.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,6 +32,11 @@ public class PermissionController {
     @GetMapping("/getUserList")
     public List<UserInfo> getUserList() {
         return permissionService.getUserList();
+    }
+
+    @PostMapping("/addUserPermission")
+    void addUserPermission(@RequestBody JSONObject requestJson) {
+        permissionService.addUserPermission(requestJson);
     }
 
 }
