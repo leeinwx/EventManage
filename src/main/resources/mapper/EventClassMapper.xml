@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.eventmanage.dao.EventDao">
+
+    <resultMap id="eventInfo" type="com.cs.eventmanage.dto.session.BigClassInfo">
+        <result column="class_id" property="classId" jdbcType="VARCHAR"/>
+        <result column="class_name" property="className" jdbcType="VARCHAR"/>
+        <result column="event_type" property="eventType" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getEventClass" resultMap="eventInfo">
+        SELECT
+            class_id,
+            class_name,
+            event_type
+        FROM
+            event_first_class
+        WHERE
+            1 = 1
+          AND `status` = 0
+    </select>
+
+    <insert id="addClass">
+        INSERT INTO event_first_class(class_id, class_name, event_type) VALUES (#{classId}, #{className}, #{eventType})
+    </insert>
+
+
+</mapper>

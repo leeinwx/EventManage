@@ -1,9 +1,10 @@
 package com.cs.eventmanage.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.alibaba.fastjson.JSONObject;
+import com.cs.eventmanage.dto.session.BigClassInfo;
+import com.cs.eventmanage.service.EventClassService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -11,14 +12,17 @@ import java.util.List;
 @RequestMapping("/class")
 public class EventClassController {
 
+    @Autowired
+    private EventClassService eventClassService;
+
     @GetMapping("/getClass")
-    List<Object> getEventClass() {
-        return null;
+    List<BigClassInfo> getEventClass() {
+        return eventClassService.getEventClass();
     }
 
     @PostMapping("/addClass")
-    void addEventClass() {
-
+    void addEventClass(@RequestBody JSONObject requestJson) {
+        eventClassService.addClass(requestJson);
     }
 
     @PostMapping("/updateClass")
