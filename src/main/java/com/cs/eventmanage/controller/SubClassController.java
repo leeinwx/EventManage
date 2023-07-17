@@ -32,6 +32,10 @@ public class SubClassController {
 
     }
 
+    /**
+     * get all city info to edit subclass attribute
+     * @return
+     */
     @PostMapping("/getCityList")
     List<ProvinceCityInfo> getCityList() {
         return subClassService.getCityList();

@@ -34,6 +34,10 @@ public class PermissionController {
         return permissionService.getUserList();
     }
 
+    /**
+     * admin account add other user menu permissions
+     * @param requestJson menu_code + List user_id
+     */
     @PostMapping("/addUserPermission")
     void addUserPermission(@RequestBody JSONObject requestJson) {
         permissionService.addUserPermission(requestJson);
