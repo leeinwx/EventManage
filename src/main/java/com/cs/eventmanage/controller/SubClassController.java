@@ -1,12 +1,11 @@
 package com.cs.eventmanage.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.cs.eventmanage.dto.session.ProvinceCityInfo;
+import com.cs.eventmanage.dto.session.SubClassInfo;
 import com.cs.eventmanage.service.SubClassService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,14 +16,14 @@ public class SubClassController {
     @Autowired
     private SubClassService subClassService;
 
-    @GetMapping("/getClass")
-    List<Object> getEventSubClass() {
-        return null;
+    @PostMapping("/getClass")
+    List<SubClassInfo> getEventSubClass(@RequestBody JSONObject requestJson) {
+        return subClassService.getEventSubClass(requestJson);
     }
 
     @PostMapping("/addClass")
-    void addEventSubClass() {
-
+    void addEventSubClass(@RequestBody JSONObject requestJson) {
+        subClassService.addEventSubClass(requestJson);
     }
 
     @PostMapping("/updateClass")

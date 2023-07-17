@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.eventmanage.dao.SubEventDao">
+
+    <resultMap id="subEventInfo" type="com.cs.eventmanage.dto.session.SubClassInfo">
+        <result column="class_id" property="classId" jdbcType="VARCHAR"/>
+        <result column="class_name" property="subClassId" jdbcType="VARCHAR"/>
+        <result column="event_type" property="subClassName" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getEventSubClass" resultMap="subEventInfo">
+        SELECT
+            class_id,
+            subclass_id,
+            subclass_name
+        FROM
+            event_sub_class
+        WHERE
+            1 = 1
+          AND `status` = 0
+    </select>
+
+    <insert id="addEventSubClass">
+        INSERT INTO event_sub_class(class_id, subclass_id, subclass_name) VALUES (#{classId}, #{subClassId}, #{subClassName})
+    </insert>
+
+</mapper>

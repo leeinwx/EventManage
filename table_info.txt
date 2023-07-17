@@ -8,8 +8,8 @@
   事件大类添加 /class/addClass done
   事件大类更新（名称、状态） /class/updateClass done
 4.事件小类编辑：
-  事件小类获取（大类下） /subClass/getClass
-  事件小类添加 /subClass/addClass
+  事件小类获取（大类下） /subClass/getClass done
+  事件小类添加 /subClass/addClass done
   事件小类更新（大类id、名称、状态） /subClass/updateClass
   地理位置获取（两层） /subClass/getCityList done
 5.事件细节编辑
