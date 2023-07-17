@@ -36,7 +36,10 @@
     </select>
 
     <insert id="addMenuPermission">
-        INSERT INTO sys_menu_permission(menu_code, user_id) VALUES (#{menuCode}, #{userId})
+        INSERT INTO sys_menu_permission(menu_code, user_id) VALUES
+        <foreach collection="userList" item="item" index="index" separator=",">
+            (#{menuCode}, #{item})
+        </foreach>
     </insert>
 
 </mapper>

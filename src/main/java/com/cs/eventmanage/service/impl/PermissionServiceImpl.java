@@ -34,6 +34,9 @@ public class PermissionServiceImpl implements PermissionService {
 
     @Override
     public void addUserPermission(JSONObject requestJson) {
-
+        String menuCode = requestJson.getString("menuCode");
+        List<String> userList = (List<String>) requestJson.get("userList");
+        requestJson.get("userList");
+        menuDao.addMenuPermission(menuCode, userList);
     }
 }

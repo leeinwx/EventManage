@@ -14,6 +14,6 @@ public interface MenuDao {
 
     List<UserInfo> getUserList();
 
-    void addMenuPermission(@Param("menuCode") String menuCode, @Param("userId") String userId);
+    void addMenuPermission(@Param("menuCode") String menuCode, @Param("userList") List<String> userList);
 
 }
