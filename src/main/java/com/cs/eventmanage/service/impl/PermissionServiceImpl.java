@@ -2,7 +2,6 @@ package com.cs.eventmanage.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.cs.eventmanage.dao.MenuDao;
-import com.cs.eventmanage.dao.UserDao;
 import com.cs.eventmanage.dto.session.MenuInfo;
 import com.cs.eventmanage.dto.session.UserInfo;
 import com.cs.eventmanage.service.PermissionService;
@@ -19,10 +18,6 @@ public class PermissionServiceImpl implements PermissionService {
     @Autowired
     private MenuDao menuDao;
 
-    @Autowired
-    private UserDao userDao;
-
-
     /**
      * get all menu info
      * @return
@@ -34,7 +29,7 @@ public class PermissionServiceImpl implements PermissionService {
 
     @Override
     public List<UserInfo> getUserList() {
-        return userDao.getUserList();
+        return menuDao.getUserList();
     }
 
     @Override

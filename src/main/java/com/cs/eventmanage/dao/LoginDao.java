@@ -1,11 +1,9 @@
 package com.cs.eventmanage.dao;
 
-import com.cs.eventmanage.dto.session.SessionUserInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
-import java.util.Set;
 
 @Mapper
 public interface LoginDao {

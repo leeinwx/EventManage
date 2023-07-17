@@ -3,7 +3,12 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.eventmanage.dao.MenuDao">
 
-    <select id="getMenuList" resultType="com.alibaba.fastjson.JSONObject">
+    <resultMap id="menuInfo" type="com.cs.eventmanage.dto.session.MenuInfo">
+        <result column="menu_code" property="menuCode" jdbcType="VARCHAR"/>
+        <result column="menu_name" property="menuName" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getMenuList" resultMap="menuInfo">
         SELECT
             menu_code,
             menu_name
@@ -12,6 +17,22 @@
         WHERE
             1 = 1
           AND STATUS = 0
+    </select>
+
+    <resultMap id="userInfo" type="com.cs.eventmanage.dto.session.UserInfo">
+        <result column="user_id" property="userId" jdbcType="VARCHAR"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getUserList" resultMap="userInfo">
+        SELECT
+            user_id,
+            username
+        FROM
+            sys_user
+        WHERE
+            1 = 1
+          AND username != 'admin'
     </select>
 
     <insert id="addMenuPermission">

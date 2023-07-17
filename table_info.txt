@@ -1,7 +1,7 @@
 1.用户表添加：只能通过root账户添加 /login/addUser
 2.用户菜单权限添加：只能通过root账户添加
-  获取所有菜单 /permission/getMenuList
-  获取所有用户 /permission/getUserList
+  获取所有菜单 /permission/getMenuList done
+  获取所有用户 /permission/getUserList done
   添加用户菜单权限 /permission/addUserPermission
 3.事件大类编辑：
   事件大类获取 /class/getEventClass
