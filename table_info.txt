@@ -13,8 +13,8 @@
   事件小类更新（大类id、名称、状态） /subClass/updateClass done
   地理位置获取（两层） /subClass/getCityList done
 5.事件细节编辑
-  事件细节添加（小类下） /subClassDetail/addInfo
-  事件细节编辑（内容、参与用户） /subClassDetail/editInfo
+  事件细节添加（小类下） /subClassDetail/addInfo done
+  事件细节编辑（内容） /subClassDetail/editInfo done
 6.事件用户行为编辑
   用户行为添加（事件下） /eventUser/add
   用户行为编辑 /eventUser/edit

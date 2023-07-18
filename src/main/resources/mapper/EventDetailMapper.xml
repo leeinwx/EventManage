@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.eventmanage.dao.EventDetailDao">
+
+    <insert id="addInfo">
+        INSERT INTO event_detail(subclass_id, content) VALUES (#{subClassId}, #{content})
+    </insert>
+
+    <update id="editInfo">
+        UPDATE event_detail
+        SET content = #{content},
+            status = #{status}
+        WHERE 1 = 1 AND subclass_id = #{subClassId}
+    </update>
+
+</mapper>
