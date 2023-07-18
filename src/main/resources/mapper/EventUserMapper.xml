@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cs.eventmanage.dao.EventUserDao">
+
+    <insert id="addUserEvent">
+        INSERT INTO event_user_operate(user_id, subclass_id, operate) VALUES (#{userId}, #{subClassId}, #{operate})
+    </insert>
+
+    <update id="editUserEvent">
+        UPDATE event_user_operate
+        SET operate = #{operate},
+            status = #{status}
+        WHERE 1 = 1 AND user_id = #{userId} AND subclass_id = #{subClassId}
+    </update>
+
+</mapper>

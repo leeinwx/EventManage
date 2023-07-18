@@ -1,6 +1,10 @@
 package com.cs.eventmanage.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import com.cs.eventmanage.service.EventUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,14 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/eventUser")
 public class EventUserController {
 
-    @PostMapping("/add")
-    void addUserEvent() {
+    @Autowired
+    private EventUserService eventUserService;
 
+    @PostMapping("/addInfo")
+    void addUserEvent(@RequestBody JSONObject requestJson) {
+        eventUserService.addUserEvent(requestJson);
     }
 
-    @PostMapping("/edit")
-    void editUserEvent() {
-
+    @PostMapping("/editInfo")
+    void editUserEvent(@RequestBody JSONObject requestJson) {
+        eventUserService.editUserEvent(requestJson);
     }
 
 }
