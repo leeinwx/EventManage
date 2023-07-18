@@ -18,7 +18,10 @@ public class EventDetailServiceImpl implements EventDetailService {
     public void addInfo(JSONObject requestJson) {
         String subClassId = requestJson.getString("subClassId");
         String content = requestJson.getString("content");
+        String classLocationId = requestJson.getString("classLocationId");
+        String classOccurDate = requestJson.getString("classOccurDate");
         eventDetailDao.addInfo(subClassId, content);
+        eventDetailDao.addPropertiesInfo(subClassId, classLocationId, classOccurDate);
     }
 
     @Override
@@ -26,6 +29,9 @@ public class EventDetailServiceImpl implements EventDetailService {
         String subClassId = requestJson.getString("subClassId");
         String content = requestJson.getString("content");
         String status = requestJson.getString("status");
+        String classLocationId = requestJson.getString("classLocationId");
+        String classOccurDate = requestJson.getString("classOccurDate");
         eventDetailDao.editInfo(subClassId, content, status);
+        eventDetailDao.editPropertiesInfo(subClassId, classLocationId, classOccurDate, status);
     }
 }

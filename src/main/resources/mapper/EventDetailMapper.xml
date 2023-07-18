@@ -7,9 +7,21 @@
         INSERT INTO event_detail(subclass_id, content) VALUES (#{subClassId}, #{content})
     </insert>
 
+    <insert id="addPropertiesInfo">
+        INSERT INTO event_properties(subclass_id, class_location_id, class_occur_date) VALUES (#{subClassId}, #{classLocationId}, #{classOccurDate})
+    </insert>
+
     <update id="editInfo">
         UPDATE event_detail
         SET content = #{content},
+            status = #{status}
+        WHERE 1 = 1 AND subclass_id = #{subClassId}
+    </update>
+
+    <update id="editPropertiesInfo">
+        UPDATE event_properties
+        SET class_location_id = #{classLocationId},
+            class_occur_date = #{classOccurDate},
             status = #{status}
         WHERE 1 = 1 AND subclass_id = #{subClassId}
     </update>
