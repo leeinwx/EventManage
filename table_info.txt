@@ -16,8 +16,8 @@
   事件细节添加（小类下） /subClassDetail/addInfo done
   事件细节编辑（内容） /subClassDetail/editInfo done
 6.事件用户行为编辑
-  用户行为添加（事件下） /eventUser/add
-  用户行为编辑 /eventUser/edit
+  用户行为添加（事件下） /eventUser/addInfo done
+  用户行为编辑 /eventUser/editInfo done
 7.用户操作行为
     登陆 /login/auth
     登出 /login/logout
