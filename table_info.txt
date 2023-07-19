@@ -21,6 +21,8 @@
 7.用户操作行为
     登陆 /login/auth
     登出 /login/logout
+8.查看事件相关report数据
+  查看事件大类、小类、属性、用户，多方关联 /board/check
 
 底层表：
 1.用户表：sys_user
