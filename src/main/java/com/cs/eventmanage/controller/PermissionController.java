@@ -32,8 +32,9 @@ public class PermissionController {
      * @return
      */
     @GetMapping("/getUserList")
-    public List<UserInfo> getUserList() {
-        return permissionService.getUserList();
+    public JSONObject getUserList() {
+        List<UserInfo> list = permissionService.getUserList();
+        return CommonUtil.successJson(list);
     }
 
     /**
@@ -41,8 +42,9 @@ public class PermissionController {
      * @param requestJson menu_code + List user_id
      */
     @PostMapping("/addUserPermission")
-    void addUserPermission(@RequestBody JSONObject requestJson) {
+    JSONObject addUserPermission(@RequestBody JSONObject requestJson) {
         permissionService.addUserPermission(requestJson);
+        return CommonUtil.successJson();
     }
 
 }
