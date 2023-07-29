@@ -7,6 +7,7 @@
         <result column="class_id" property="classId" jdbcType="VARCHAR"/>
         <result column="class_name" property="className" jdbcType="VARCHAR"/>
         <result column="event_type" property="eventType" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="INTEGER" />
     </resultMap>
 
     <select id="getAllType" resultType="java.lang.String">
@@ -20,12 +21,27 @@
         SELECT
             class_id,
             class_name,
-            event_type
+            event_type,
+            status
         FROM
             event_first_class
         WHERE
             1 = 1
           AND `status` = 0
+    </select>
+
+    <select id="getEventClassWithParam" resultMap="eventInfo">
+        SELECT
+            class_id,
+            class_name,
+            event_type,
+            status
+        FROM
+            event_first_class
+        WHERE
+            1 = 1
+          AND `status` = 0
+          AND event_type = #{type}
     </select>
 
     <insert id="addClass">

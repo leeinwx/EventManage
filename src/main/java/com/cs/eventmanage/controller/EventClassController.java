@@ -1,13 +1,11 @@
 package com.cs.eventmanage.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.cs.eventmanage.dto.session.BigClassInfo;
 import com.cs.eventmanage.service.EventClassService;
 import com.cs.eventmanage.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/class")
@@ -26,8 +24,8 @@ public class EventClassController {
      * @return
      */
     @GetMapping("/getClass")
-    List<BigClassInfo> getEventClass() {
-        return eventClassService.getEventClass();
+    JSONObject getEventClass(@RequestParam(value = "type") String type) {
+        return CommonUtil.successJson(eventClassService.getEventClass(type));
     }
 
     /**
@@ -35,8 +33,9 @@ public class EventClassController {
      * @param requestJson
      */
     @PostMapping("/addClass")
-    void addEventClass(@RequestBody JSONObject requestJson) {
+    JSONObject addEventClass(@RequestBody JSONObject requestJson) {
         eventClassService.addClass(requestJson);
+        return CommonUtil.successJson();
     }
 
     /**
@@ -44,8 +43,9 @@ public class EventClassController {
      * @param requestJson
      */
     @PostMapping("/updateClass")
-    void updateEventClass(@RequestBody JSONObject requestJson) {
+    JSONObject updateEventClass(@RequestBody JSONObject requestJson) {
         eventClassService.updateClass(requestJson);
+        return CommonUtil.successJson();
     }
 
 }

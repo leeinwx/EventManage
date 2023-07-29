@@ -9,7 +9,7 @@ public interface EventClassService {
 
     List<String> getAllType();
 
-    List<BigClassInfo> getEventClass();
+    List<BigClassInfo> getEventClass(String type);
 
     void addClass(JSONObject requestJson);
 

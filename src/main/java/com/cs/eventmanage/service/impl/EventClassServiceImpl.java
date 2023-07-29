@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Slf4j
@@ -23,16 +24,18 @@ public class EventClassServiceImpl implements EventClassService {
     }
 
     @Override
-    public List<BigClassInfo> getEventClass() {
-        return eventDao.getEventClass();
+    public List<BigClassInfo> getEventClass(String type) {
+        if (type == null || type.length() == 0) {
+            return eventDao.getEventClass();
+        }
+        return eventDao.getEventClassWithParam(type);
     }
 
     @Override
     public void addClass(JSONObject requestJson) {
         String className = requestJson.getString("className");
         String eventType = requestJson.getString("eventType");
-        //todo
-        String uuid = "1111";
+        String uuid = UUID.randomUUID().toString();
         eventDao.addClass(uuid, className, eventType);
     }
 

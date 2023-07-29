@@ -11,4 +11,6 @@ public class BigClassInfo {
 
     private String eventType;
 
+    private Integer status;
+
 }

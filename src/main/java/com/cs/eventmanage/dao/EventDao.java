@@ -13,6 +13,8 @@ public interface EventDao {
 
     List<BigClassInfo> getEventClass();
 
+    List<BigClassInfo> getEventClassWithParam(@Param("type") String type);
+
     void addClass(@Param("classId") String classId, @Param("className") String className, @Param("eventType") String eventType);
 
     void updateClass(@Param("classId") String classId, @Param("className") String className, @Param("eventType") String eventType, @Param("status") Integer status);
