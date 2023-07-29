@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class DashBoardServiceImpl implements DashBoardService {
 
-    @Autowired
-    private DashBoardDao dashBoardDao;
+    //@Autowired
+    //private DashBoardDao dashBoardDao;
 
     @Override
     public void check(JSONObject requestJson) {
@@ -25,6 +25,7 @@ public class DashBoardServiceImpl implements DashBoardService {
         if (requestJson.containsKey("eventType")) {
             eventType = requestJson.getString("eventType");
         }
+        return;
         //class_id
         //class_name
         //event_type
@@ -38,6 +39,6 @@ public class DashBoardServiceImpl implements DashBoardService {
         //user_id
         //username
         //operate
-        dashBoardDao.check(username, eventType, page);
+        //dashBoardDao.check(username, eventType, page);
     }
 }

@@ -3,22 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.eventmanage.dao.DashBoardDao">
 
-    <resultMap id="eventDetail" type="com.cs.eventmanage.dto.session.EventDetailInfo">
-        <result column="" property="" jdbcType=""/>
-        <result column="" property="" jdbcType=""/>
-        <result column="" property="" jdbcType=""/>
-        <result column="" property="" jdbcType=""/>
-        <result column="" property="" jdbcType=""/>
-        <result column="" property="" jdbcType=""/>
-        <result column="" property="" jdbcType=""/>
-        <result column="" property="" jdbcType=""/>
-        <result column="" property="" jdbcType=""/>
-        <result column="" property="" jdbcType=""/>
-        <result column="" property="" jdbcType=""/>
-        <result column="" property="" jdbcType=""/>
-    </resultMap>
-
-    <select id="check" resultMap="eventDetail">
+    <select id="test" resultType="java.lang.Integer">
         SELECT 1
     </select>
 

@@ -5,10 +5,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface LoginService {
 
-    JSONObject authLogin(JSONObject jsonObject);
+    JSONObject addUser(JSONObject jsonObject);
 
-    void addUser(JSONObject jsonObject);
-
-    JSONObject logout();
+    JSONObject getRandomPassword();
 
 }

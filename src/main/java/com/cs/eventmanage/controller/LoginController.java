@@ -4,10 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.cs.eventmanage.service.LoginService;
 import com.cs.eventmanage.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/login")
@@ -17,29 +14,18 @@ public class LoginController {
     private LoginService loginService;
 
     /**
-     * user login
-     * @param requestJson username and password
-     * @return jsonobject
-     */
-    @PostMapping("/auth")
-    public JSONObject authLogin(@RequestBody JSONObject requestJson) {
-        CommonUtil.hasAllRequired(requestJson, "username,password");
-        return loginService.authLogin(requestJson);
-    }
-
-    @PostMapping("/logout")
-    public JSONObject logout() {
-        return loginService.logout();
-    }
-
-    /**
      * add user
      * @param requestJson username and password
      */
     @PostMapping("/addUser")
-    public void addUser(@RequestBody JSONObject requestJson) {
+    public JSONObject addUser(@RequestBody JSONObject requestJson) {
         CommonUtil.hasAllRequired(requestJson, "username,password");
-        loginService.addUser(requestJson);
+        return loginService.addUser(requestJson);
+    }
+
+    @GetMapping("/getRandomPassword")
+    public JSONObject getRandomPassword() {
+        return loginService.getRandomPassword();
     }
 
 }

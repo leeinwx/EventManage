@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface DashBoardDao {
 
+    Integer test();
+
     void check(@Param("username") String username, @Param("eventType") String eventType, @Param("page") Integer page);
 
 }

@@ -3,20 +3,22 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.eventmanage.dao.LoginDao">
 
-    <select id="checkUser" resultType="Integer">
-        SELECT
-            id
-        FROM
-            sys_user
-        WHERE
-            1 = 1
-          AND username = #{username}
-          AND password = #{password}
-          AND STATUS = 0
-    </select>
-
     <insert id="addUser">
-        INSERT INTO sys_user(username, password) VALUES(#{username}, #{password})
+        INSERT INTO sys_user(username, password, user_id) VALUES(#{username}, #{password}, #{userId})
     </insert>
+
+    <select id="getRandomPassword" resultType="java.lang.String">
+        SELECT
+            CONCAT(
+                SUBSTRING( 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', FLOOR( RAND() * 26 ) + 1, 1 ),
+                SUBSTRING( 'abcdefghijklmnopqrstuvwxyz', FLOOR( RAND() * 26 ) + 1, 1 ),
+                SUBSTRING( '0123456789', FLOOR( RAND() * 10 ) + 1, 1 ),
+                SUBSTRING( '!@#$%^&amp;*()', FLOOR( RAND() * 10 ) + 1, 1 ),
+                SUBSTRING( 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&amp;*()', FLOOR( RAND() * 69 ) + 1, 1 ),
+                SUBSTRING( 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&amp;*()', FLOOR( RAND() * 69 ) + 1, 1 ),
+                SUBSTRING( 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&amp;*()', FLOOR( RAND() * 69 ) + 1, 1 ),
+                SUBSTRING( 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&amp;*()', FLOOR( RAND() * 69 ) + 1, 1 )
+            ) AS PASSWORD
+    </select>
 
 </mapper>
