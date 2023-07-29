@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.cs.eventmanage.dto.session.ProvinceCityInfo;
 import com.cs.eventmanage.dto.session.SubClassInfo;
 import com.cs.eventmanage.service.SubClassService;
+import com.cs.eventmanage.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,19 +17,22 @@ public class SubClassController {
     @Autowired
     private SubClassService subClassService;
 
-    @PostMapping("/getClass")
-    List<SubClassInfo> getEventSubClass(@RequestBody JSONObject requestJson) {
-        return subClassService.getEventSubClass(requestJson);
+    @GetMapping("/getClass")
+    JSONObject getEventSubClass(@RequestParam(value = "classId") String classId) {
+        List<SubClassInfo> list = subClassService.getEventSubClass(classId);
+        return CommonUtil.successJson(list);
     }
 
     @PostMapping("/addClass")
-    void addEventSubClass(@RequestBody JSONObject requestJson) {
+    JSONObject addEventSubClass(@RequestBody JSONObject requestJson) {
         subClassService.addEventSubClass(requestJson);
+        return CommonUtil.successJson();
     }
 
     @PostMapping("/updateClass")
-    void updateEventSubClass(@RequestBody JSONObject requestJson) {
+    JSONObject updateEventSubClass(@RequestBody JSONObject requestJson) {
         subClassService.updateEventSubClass(requestJson);
+        return CommonUtil.successJson();
     }
 
     /**
@@ -36,8 +40,9 @@ public class SubClassController {
      * @return
      */
     @PostMapping("/getCityList")
-    List<ProvinceCityInfo> getCityList() {
-        return subClassService.getCityList();
+    JSONObject getCityList() {
+        List<ProvinceCityInfo> list = subClassService.getCityList();
+        return CommonUtil.successJson(list);
     }
 
 }

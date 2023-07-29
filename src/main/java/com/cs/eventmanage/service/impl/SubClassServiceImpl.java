@@ -23,9 +23,12 @@ public class SubClassServiceImpl implements SubClassService {
     private ProvinceCityDao provinceCityDao;
 
     @Override
-    public List<SubClassInfo> getEventSubClass(JSONObject requestJson) {
-        String classId = requestJson.getString("classId");
-        return subEventDao.getEventSubClass(classId);
+    public List<SubClassInfo> getEventSubClass(String classId) {
+        if (classId == null || classId.length() == 0) {
+            return subEventDao.getAllEventSubClass();
+        } else {
+            return subEventDao.getEventSubClass(classId);
+        }
     }
 
     @Override

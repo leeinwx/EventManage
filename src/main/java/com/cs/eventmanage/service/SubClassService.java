@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface SubClassService {
 
-    List<SubClassInfo> getEventSubClass(JSONObject requestJson);
+    List<SubClassInfo> getEventSubClass(String classId);
 
     void addEventSubClass(JSONObject requestJson);
 

@@ -14,6 +14,10 @@ public class EventClassController {
     @Autowired
     private EventClassService eventClassService;
 
+    /**
+     * get add distinct event type
+     * @return
+     */
     @GetMapping("/getAllType")
     public JSONObject getAllType() {
         return CommonUtil.successJson(eventClassService.getAllType());

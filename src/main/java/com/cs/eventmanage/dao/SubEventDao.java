@@ -9,6 +9,8 @@ import java.util.List;
 @Mapper
 public interface SubEventDao {
 
+    List<SubClassInfo> getAllEventSubClass();
+
     List<SubClassInfo> getEventSubClass(@Param("classId") String classId);
 
     void addEventSubClass(@Param("classId") String classId, @Param("subClassId") String subClassId, @Param("subClassName") String subClassName);

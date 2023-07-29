@@ -5,9 +5,21 @@
 
     <resultMap id="subEventInfo" type="com.cs.eventmanage.dto.session.SubClassInfo">
         <result column="class_id" property="classId" jdbcType="VARCHAR"/>
-        <result column="class_name" property="subClassId" jdbcType="VARCHAR"/>
-        <result column="event_type" property="subClassName" jdbcType="VARCHAR"/>
+        <result column="subclass_id" property="subClassId" jdbcType="VARCHAR"/>
+        <result column="subclass_name" property="subClassName" jdbcType="VARCHAR"/>
     </resultMap>
+
+    <select id="getAllEventSubClass" resultMap="subEventInfo">
+        SELECT
+            class_id,
+            subclass_id,
+            subclass_name
+        FROM
+            event_sub_class
+        WHERE
+            1 = 1
+          AND `status` = 0
+    </select>
 
     <select id="getEventSubClass" resultMap="subEventInfo">
         SELECT
@@ -19,6 +31,7 @@
         WHERE
             1 = 1
           AND `status` = 0
+          AND class_id = #{classId}
     </select>
 
     <insert id="addEventSubClass">

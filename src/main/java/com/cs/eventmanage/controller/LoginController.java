@@ -23,6 +23,10 @@ public class LoginController {
         return loginService.addUser(requestJson);
     }
 
+    /**
+     * get random password then add user
+     * @return
+     */
     @GetMapping("/getRandomPassword")
     public JSONObject getRandomPassword() {
         return loginService.getRandomPassword();
