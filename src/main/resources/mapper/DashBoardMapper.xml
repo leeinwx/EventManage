@@ -3,6 +3,34 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.eventmanage.dao.DashBoardDao">
 
+    <resultMap id="basicInfo" type="com.cs.eventmanage.dto.session.EventCheckInfo">
+        <result column="class_id" property="classId" jdbcType="VARCHAR"/>
+        <result column="class_name" property="className" jdbcType="VARCHAR"/>
+        <result column="event_type" property="eventType" jdbcType="VARCHAR"/>
+        <result column="subclass_id" property="subClassId" jdbcType="VARCHAR"/>
+        <result column="subclass_name" property="subClassName" jdbcType="VARCHAR"/>
+        <result column="class_occur_date" property="classOccurDate" jdbcType="VARCHAR"/>
+        <result column="city_name" property="cityName" jdbcType="VARCHAR"/>
+        <result column="num" property="num" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <select id="getBasic" resultMap="basicInfo">
+        SELECT
+            a.class_id,
+            a.class_name,
+            a.event_type,
+            b.subclass_id,
+            b.subclass_name,
+            c.class_occur_date,
+            d.city_name,
+            ROW_NUMBER() over ( PARTITION BY a.class_id ORDER BY c.class_occur_date ) AS num
+        FROM
+            event_first_class a
+            LEFT JOIN event_sub_class b ON a.class_id = b.class_id
+            LEFT JOIN event_properties c ON b.subclass_id = c.subclass_id
+            LEFT JOIN province_city d on c.class_location_id = d.city_id
+    </select>
+
     <select id="test" resultType="java.lang.Integer">
         SELECT 1
     </select>
