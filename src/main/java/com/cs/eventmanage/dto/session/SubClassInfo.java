@@ -11,4 +11,6 @@ public class SubClassInfo {
 
     private String subClassName;
 
+    private Integer status;
+
 }

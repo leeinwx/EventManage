@@ -17,18 +17,33 @@ public class SubClassController {
     @Autowired
     private SubClassService subClassService;
 
+    /**
+     * show sub event class
+     * @param classId
+     * @return
+     */
     @GetMapping("/getClass")
     JSONObject getEventSubClass(@RequestParam(value = "classId") String classId) {
         List<SubClassInfo> list = subClassService.getEventSubClass(classId);
         return CommonUtil.successJson(list);
     }
 
+    /**
+     * add sub event class
+     * @param requestJson
+     * @return
+     */
     @PostMapping("/addClass")
     JSONObject addEventSubClass(@RequestBody JSONObject requestJson) {
         subClassService.addEventSubClass(requestJson);
         return CommonUtil.successJson();
     }
 
+    /**
+     * update sub event class
+     * @param requestJson
+     * @return
+     */
     @PostMapping("/updateClass")
     JSONObject updateEventSubClass(@RequestBody JSONObject requestJson) {
         subClassService.updateEventSubClass(requestJson);

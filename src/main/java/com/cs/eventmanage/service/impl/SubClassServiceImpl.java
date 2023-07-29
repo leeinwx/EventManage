@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Slf4j
@@ -34,8 +35,7 @@ public class SubClassServiceImpl implements SubClassService {
     @Override
     public void addEventSubClass(JSONObject requestJson) {
         String classId = requestJson.getString("classId");
-        //todo
-        String subClassId = "2222";
+        String subClassId = UUID.randomUUID().toString();
         String subClassName = requestJson.getString("subClassName");
         subEventDao.addEventSubClass(classId, subClassId, subClassName);
     }

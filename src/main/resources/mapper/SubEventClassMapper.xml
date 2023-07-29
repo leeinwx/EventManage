@@ -7,13 +7,15 @@
         <result column="class_id" property="classId" jdbcType="VARCHAR"/>
         <result column="subclass_id" property="subClassId" jdbcType="VARCHAR"/>
         <result column="subclass_name" property="subClassName" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
     </resultMap>
 
     <select id="getAllEventSubClass" resultMap="subEventInfo">
         SELECT
             class_id,
             subclass_id,
-            subclass_name
+            subclass_name,
+            status
         FROM
             event_sub_class
         WHERE
@@ -25,7 +27,8 @@
         SELECT
             class_id,
             subclass_id,
-            subclass_name
+            subclass_name,
+            status
         FROM
             event_sub_class
         WHERE

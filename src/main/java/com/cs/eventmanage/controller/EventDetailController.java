@@ -2,6 +2,7 @@ package com.cs.eventmanage.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.cs.eventmanage.service.EventDetailService;
+import com.cs.eventmanage.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,14 +16,26 @@ public class EventDetailController {
     @Autowired
     private EventDetailService eventDetailService;
 
+    /**
+     * add sub event class info
+     * @param requestJson
+     * @return
+     */
     @PostMapping("/addInfo")
-    void addInfo(@RequestBody JSONObject requestJson) {
+    JSONObject addInfo(@RequestBody JSONObject requestJson) {
         eventDetailService.addInfo(requestJson);
+        return CommonUtil.successJson();
     }
 
+    /**
+     * edit sub event class info
+     * @param requestJson
+     * @return
+     */
     @PostMapping("/editInfo")
-    void editInfo(@RequestBody JSONObject requestJson) {
+    JSONObject editInfo(@RequestBody JSONObject requestJson) {
         eventDetailService.editInfo(requestJson);
+        return CommonUtil.successJson();
     }
 
 }
