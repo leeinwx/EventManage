@@ -3,6 +3,54 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cs.eventmanage.dao.EventUserDao">
 
+    <resultMap id="operateInfo" type="com.cs.eventmanage.dto.session.EventOperateInfo">
+        <result column="user_id" property="userId" jdbcType="VARCHAR"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="subclass_id" property="subClassId" jdbcType="VARCHAR"/>
+        <result column="operate" property="operate" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+        <result column="update_time" property="updateTime" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getInfo" resultMap="operateInfo">
+        SELECT
+            a.user_id,
+            b.username,
+            a.subclass_id,
+            a.operate,
+            a.`status`,
+            a.update_time
+        FROM
+            event_user_operate a
+                LEFT JOIN sys_user b ON a.user_id = b.user_id
+        WHERE
+            1 = 1
+          AND a.`status` = 0
+          AND b.`status` = 0
+        ORDER BY
+            a.subclass_id
+    </select>
+
+    <select id="getInfoWithParam" resultMap="operateInfo">
+        SELECT
+            a.user_id,
+            b.username,
+            a.subclass_id,
+            a.operate,
+            a.`status`,
+            a.update_time
+        FROM
+            event_user_operate a
+                LEFT JOIN sys_user b ON a.user_id = b.user_id
+        WHERE
+            1 = 1
+          AND a.`status` = 0
+          AND b.`status` = 0
+          AND a.subclass_id = #{subClassId}
+        ORDER BY
+            a.subclass_id
+    </select>
+
     <insert id="addUserEvent">
         INSERT INTO event_user_operate(user_id, subclass_id, operate) VALUES (#{userId}, #{subClassId}, #{operate})
     </insert>
