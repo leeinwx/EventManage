@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.cs.eventmanage.dto.session.MenuInfo;
 import com.cs.eventmanage.dto.session.UserInfo;
 import com.cs.eventmanage.service.PermissionService;
+import com.cs.eventmanage.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +22,9 @@ public class PermissionController {
      * @return menu list
      */
     @GetMapping("/getMenuList")
-    public List<MenuInfo> getMenuList() {
-        return permissionService.getMenuList();
+    public JSONObject getMenuList(@RequestParam(value = "name") String name) {
+        List<MenuInfo> list = permissionService.getMenuList(name);
+        return CommonUtil.successJson(list);
     }
 
     /**

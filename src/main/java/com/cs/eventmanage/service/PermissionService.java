@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface PermissionService {
 
-    List<MenuInfo> getMenuList();
+    List<MenuInfo> getMenuList(String name);
 
     List<UserInfo> getUserList();
 

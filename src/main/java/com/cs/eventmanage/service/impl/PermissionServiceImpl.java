@@ -23,8 +23,8 @@ public class PermissionServiceImpl implements PermissionService {
      * @return
      */
     @Override
-    public List<MenuInfo> getMenuList() {
-        return menuDao.getMenuList();
+    public List<MenuInfo> getMenuList(String name) {
+        return menuDao.getMenuList(name);
     }
 
     @Override

@@ -17,6 +17,7 @@
         WHERE
             1 = 1
           AND STATUS = 0
+          AND upper(menu_name) LIKE concat("%",concat(upper(#{name}),"%"))
     </select>
 
     <resultMap id="userInfo" type="com.cs.eventmanage.dto.session.UserInfo">

@@ -10,7 +10,7 @@ import java.util.List;
 @Mapper
 public interface MenuDao {
 
-    List<MenuInfo> getMenuList();
+    List<MenuInfo> getMenuList(@Param("name") String name);
 
     List<UserInfo> getUserList();
 
