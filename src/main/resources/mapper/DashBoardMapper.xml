@@ -14,6 +14,12 @@
         <result column="num" property="num" jdbcType="INTEGER"/>
     </resultMap>
 
+    <resultMap id="mapInfo" type="com.cs.eventmanage.dto.session.MapInfo">
+        <result column="province" property="province" jdbcType="VARCHAR"/>
+        <result column="city_name" property="cityName" jdbcType="VARCHAR"/>
+        <result column="num" property="num" jdbcType="INTEGER"/>
+    </resultMap>
+
     <select id="getBasic" resultMap="basicInfo">
         SELECT
             a.class_id,
@@ -31,9 +37,18 @@
             LEFT JOIN province_city d on c.class_location_id = d.city_id
     </select>
 
-    <select id="test" resultType="java.lang.Integer">
-        SELECT 1
+    <select id="getMapInfo" resultMap="mapInfo">
+        SELECT
+            c.province,
+            c.city_name,
+            COUNT( a.subclass_id ) AS nums
+        FROM
+            event_sub_class a
+            LEFT JOIN event_properties b ON a.subclass_id = b.subclass_id
+            LEFT JOIN province_city c ON b.class_location_id = c.city_id
+        GROUP BY
+            c.province,
+            c.city_name
     </select>
-
 
 </mapper>

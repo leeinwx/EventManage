@@ -2,6 +2,7 @@ package com.cs.eventmanage.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.cs.eventmanage.dto.session.EventCheckInfo;
+import com.cs.eventmanage.dto.session.MapInfo;
 import com.cs.eventmanage.service.DashBoardService;
 import com.cs.eventmanage.util.CommonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +23,10 @@ public class DashBoardController {
         return CommonUtil.successJson(list);
     }
 
-    @PostMapping("/check")
-    void check(@RequestBody JSONObject requestJson) {
-        dashBoardService.check(requestJson);
+    @GetMapping("/getMapInfo")
+    JSONObject getMapInfo() {
+        List<MapInfo> list = dashBoardService.getMapInfo();
+        return CommonUtil.successJson(list);
     }
 
 }
