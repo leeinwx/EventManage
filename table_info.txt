@@ -1,29 +1,3 @@
-1.用户表添加：只能通过root账户添加 /login/addUser
-2.用户菜单权限添加：只能通过root账户添加
-  获取所有菜单 /permission/getMenuList done
-  获取所有用户 /permission/getUserList done
-  添加用户菜单权限 /permission/addUserPermission done
-3.事件大类编辑：
-  事件大类获取 /class/getClass done
-  事件大类添加 /class/addClass done
-  事件大类更新（名称、状态） /class/updateClass done
-4.事件小类编辑：
-  事件小类获取（大类下） /subClass/getClass done
-  事件小类添加 /subClass/addClass done
-  事件小类更新（大类id、名称、状态） /subClass/updateClass done
-  地理位置获取（两层） /subClass/getCityList done
-5.事件细节编辑
-  事件细节添加（小类下） /subClassDetail/addInfo done
-  事件细节编辑（内容） /subClassDetail/editInfo done
-6.事件用户行为编辑
-  用户行为添加（事件下） /eventUser/addInfo done
-  用户行为编辑 /eventUser/editInfo done
-7.用户操作行为
-    登陆 /login/auth
-    登出 /login/logout
-8.查看事件相关report数据
-  查看事件大类、小类、属性、用户，多方关联 /board/check
-
 底层表：
 1.用户表：sys_user
 CREATE TABLE `eventmanage`.`sys_user`  (

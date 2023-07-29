@@ -1,0 +1,570 @@
+{
+	"info": {
+		"_postman_id": "3aacfa50-d5d8-4a8a-988a-7ffcb68d4941",
+		"name": "EventManage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "EventClassController",
+			"item": [
+				{
+					"name": "getAllType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/class/getAllType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"class",
+								"getAllType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getClass",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/class/getClass?type=public welfare",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"class",
+								"getClass"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "public welfare"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addClass",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"className\":\"qwqweqe\",\n    \"eventType\":\"sadasd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/class/addClass",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"class",
+								"addClass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateClass",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"classId\":\"1111\",\n    \"className\": \"lee\",\n    \"eventType\": \"lee\",\n    \"status\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/class/updateClass",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"class",
+								"updateClass"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EventDetailController",
+			"item": [
+				{
+					"name": "addInfo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subClassId\":\"11111\",\n    \"content\":\"leeinsss\",\n    \"classLocationId\":\"1111\",\n    \"classOccurDate\":\"2023-07-02\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subClassDetail/addInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subClassDetail",
+								"addInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editInfo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"subClassId\":\"11111\",\n    \"content\":\"asdasd\",\n    \"status\":0,\n    \"classLocationId\":\"2222\",\n    \"classOccurDate\":\"2023-07-02\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subClassDetail/editInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subClassDetail",
+								"editInfo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EventUserController",
+			"item": [
+				{
+					"name": "getInfo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/eventUser/getInfo?subClassId=03f81a8a-bee2-552d-bd3a-0f01970028fa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"eventUser",
+								"getInfo"
+							],
+							"query": [
+								{
+									"key": "subClassId",
+									"value": "03f81a8a-bee2-552d-bd3a-0f01970028fa"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addInfo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"111\",\n    \"subClassId\":\"222\",\n    \"operate\":\"333\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/eventUser/addInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"eventUser",
+								"addInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editInfo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\":\"111\",\n    \"subClassId\":\"222\",\n    \"operate\":\"333\",\n    \"status\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/eventUser/editInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"eventUser",
+								"editInfo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LoginController",
+			"item": [
+				{
+					"name": "addUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"test2\",\n    \"password\":\"Qs7&FWdI\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login/addUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login",
+								"addUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRandomPassword",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/login/getRandomPassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login",
+								"getRandomPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PermissionController",
+			"item": [
+				{
+					"name": "getMenuList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/permission/getMenuList?name=tab",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"permission",
+								"getMenuList"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "tab"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/permission/getUserList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"permission",
+								"getUserList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUserPermission",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"menuCode\":\"1234\",\n    \"userList\":[\"sadasda\",\"asdasda\",\"asdasdas\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/permission/addUserPermission",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"permission",
+								"addUserPermission"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SubClassController",
+			"item": [
+				{
+					"name": "getClass",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subClass/getClass?classId=615f0d4c-8769-5751-baa9-2fc0f4937f1a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subClass",
+								"getClass"
+							],
+							"query": [
+								{
+									"key": "classId",
+									"value": "615f0d4c-8769-5751-baa9-2fc0f4937f1a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addClass",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"classId\":\"111\",\n    \"subClassName\":\"333\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subClass/addClass",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subClass",
+								"addClass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateClass",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"classId\":\"1\",\n    \"subClassId\":\"2\",\n    \"subClassName\":\"3\",\n    \"status\":0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/subClass/updateClass",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subClass",
+								"updateClass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCityList",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/subClass/getCityList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"subClass",
+								"getCityList"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DashBoardController",
+			"item": [
+				{
+					"name": "getBasic",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/board/getBasic",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"board",
+								"getBasic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMapInfo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/board/getMapInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"board",
+								"getMapInfo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
