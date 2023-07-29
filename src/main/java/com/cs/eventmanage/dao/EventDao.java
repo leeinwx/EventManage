@@ -9,6 +9,8 @@ import java.util.List;
 @Mapper
 public interface EventDao {
 
+    List<String> getAllType();
+
     List<BigClassInfo> getEventClass();
 
     void addClass(@Param("classId") String classId, @Param("className") String className, @Param("eventType") String eventType);

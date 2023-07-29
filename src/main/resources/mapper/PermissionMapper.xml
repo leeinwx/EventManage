@@ -17,6 +17,17 @@
         WHERE
             1 = 1
           AND STATUS = 0
+    </select>
+
+    <select id="getMenuListWithParam" resultMap="menuInfo">
+        SELECT
+            menu_code,
+            menu_name
+        FROM
+            menu_info
+        WHERE
+            1 = 1
+          AND STATUS = 0
           AND upper(menu_name) LIKE concat("%",concat(upper(#{name}),"%"))
     </select>
 

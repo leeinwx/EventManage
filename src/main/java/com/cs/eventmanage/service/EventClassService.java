@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface EventClassService {
 
+    List<String> getAllType();
+
     List<BigClassInfo> getEventClass();
 
     void addClass(JSONObject requestJson);

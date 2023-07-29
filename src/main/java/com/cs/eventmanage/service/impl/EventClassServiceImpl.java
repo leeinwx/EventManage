@@ -18,6 +18,11 @@ public class EventClassServiceImpl implements EventClassService {
     private EventDao eventDao;
 
     @Override
+    public List<String> getAllType() {
+        return eventDao.getAllType();
+    }
+
+    @Override
     public List<BigClassInfo> getEventClass() {
         return eventDao.getEventClass();
     }

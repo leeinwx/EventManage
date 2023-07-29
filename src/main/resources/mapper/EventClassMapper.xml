@@ -9,6 +9,13 @@
         <result column="event_type" property="eventType" jdbcType="VARCHAR"/>
     </resultMap>
 
+    <select id="getAllType" resultType="java.lang.String">
+        SELECT DISTINCT
+            event_type
+        FROM
+            event_first_class
+    </select>
+
     <select id="getEventClass" resultMap="eventInfo">
         SELECT
             class_id,

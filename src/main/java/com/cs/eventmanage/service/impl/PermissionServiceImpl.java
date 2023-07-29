@@ -24,7 +24,10 @@ public class PermissionServiceImpl implements PermissionService {
      */
     @Override
     public List<MenuInfo> getMenuList(String name) {
-        return menuDao.getMenuList(name);
+        if (name == null || name.length() == 0) {
+            return menuDao.getMenuList();
+        }
+        return menuDao.getMenuListWithParam(name);
     }
 
     @Override
