@@ -16,6 +16,8 @@ public class EventDetailController {
     @Autowired
     private EventDetailService eventDetailService;
 
+    //todo subclassid
+
     /**
      * add sub event class info
      * @param requestJson

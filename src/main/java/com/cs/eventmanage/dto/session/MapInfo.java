@@ -11,4 +11,8 @@ public class MapInfo {
 
     private Integer nums;
 
+    private double latitude;
+
+    private double longitude;
+
 }

@@ -14,6 +14,8 @@ public class EventDetailServiceImpl implements EventDetailService {
     @Autowired
     private EventDetailDao eventDetailDao;
 
+    //todo subclassid
+
     @Override
     public void addInfo(JSONObject requestJson) {
         String subClassId = requestJson.getString("subClassId");

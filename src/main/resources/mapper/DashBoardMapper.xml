@@ -18,6 +18,8 @@
         <result column="province" property="province" jdbcType="VARCHAR"/>
         <result column="city_name" property="cityName" jdbcType="VARCHAR"/>
         <result column="num" property="num" jdbcType="INTEGER"/>
+        <result column="latitude" property="latitude" jdbcType="DOUBLE"/>
+        <result column="longitude" property="longitude" jdbcType="DOUBLE"/>
     </resultMap>
 
     <select id="getBasic" resultMap="basicInfo">
@@ -41,14 +43,18 @@
         SELECT
             c.province,
             c.city_name,
-            COUNT( a.subclass_id ) AS nums
+            COUNT( a.subclass_id ) AS nums,
+            c.latitude,
+            c.longitude
         FROM
             event_sub_class a
             LEFT JOIN event_properties b ON a.subclass_id = b.subclass_id
             LEFT JOIN province_city c ON b.class_location_id = c.city_id
         GROUP BY
             c.province,
-            c.city_name
+            c.city_name,
+            c.latitude,
+            c.longitude
     </select>
 
 </mapper>
